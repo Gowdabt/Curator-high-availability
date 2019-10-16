@@ -26,9 +26,6 @@ public class KafkaConfiguration {
 
 	@Value("${kafka.port}")
 	private String kafkaPort;
-
-	@Value("${kafka.message.groupid}")
-	private String kafkaMessageGroupid;
 	
 	
 	@Bean
@@ -36,7 +33,6 @@ public class KafkaConfiguration {
 		Map<String, Object> config = new HashMap<>();
 		
 		config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaHost + ":" + kafkaPort);
-		config.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaMessageGroupid);
 		config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
 				"org.apache.kafka.common.serialization.IntegerDeserializer");
 		config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
