@@ -18,7 +18,7 @@ This Spring boot application enables read messages(Notification/Alarms) continuo
 
 *spring.data.elasticsearch.cluster-name=<cluster name>
 
-*spring.data.elasticsearch.cluster-nodes=<elasticsearchHost&port>
+*spring.data.elasticsearch.cluster-nodes=<elasticsearchHostandport>
 
 *kafka.topic=<topics>
 
@@ -29,7 +29,7 @@ This Spring boot application enables read messages(Notification/Alarms) continuo
 	kafkahost : specify from which host server this application need to subscribe
 	kafkaport : port of kafka server
 	cluster name : need to specify which elastic search cluster name
-	elasticsearchHost&port :need to specify host and port of elastic search in host:port format
+	elasticsearchHostandport :need to specify host and port of elastic search in host:port format
 	topics :specify kafka topics delimited by , to which this application need to subscribe
 ```
 
