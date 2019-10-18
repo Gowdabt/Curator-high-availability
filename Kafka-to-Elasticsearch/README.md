@@ -10,7 +10,7 @@ This Spring boot application enables read messages(Notification/Alarms) continuo
 
 ##application.properties
 
-*server.port=<portNumber>
+*server.port=<applicationPortNumber>
 
 *kafka.host=<kafkaHost>
 
@@ -25,7 +25,7 @@ This Spring boot application enables read messages(Notification/Alarms) continuo
 ```
 	Mandatory Arguments : 
 	
-	portNumber : need to specify in which port this application should run
+	applicationPortNumber : need to specify in which port this application should run
 	kafkaHost : specify from which host server this application need to subscribe
 	kafkaPort : port of kafka server
 	clusterName : need to specify which elastic search cluster name
