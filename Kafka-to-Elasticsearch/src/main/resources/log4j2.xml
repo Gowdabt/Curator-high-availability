@@ -23,13 +23,13 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <AsyncLogger name="com.infinera.dna" level="debug"
+        <AsyncLogger name="com.infinera.dna" level="info"
                      additivity="false">
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender" />
         </AsyncLogger>
 
-        <Root level="debug">
+        <Root level="info">
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender" />
         </Root>
