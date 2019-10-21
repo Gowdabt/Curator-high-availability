@@ -44,7 +44,7 @@ KafkaTopics: EMS_KAFKA_ALARMS_TOPIC,ACHistoricPM,AsePtpHistoricPM,ATNBandCtpHist
 ```
 docker build -f <DockerFileName> -t <DockerImageName> .
 
-example : docker build -f KafkaDockerFile -t kafka-toelasticsearch .
+example : docker build -f KafkaDockerFile -t kafka-to-elasticsearch .
 
 ```
 
