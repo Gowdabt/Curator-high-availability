@@ -6,9 +6,9 @@ This Spring boot application enables read messages(Notification/Alarms) continuo
 *As Kafka to Elasticsearch application subscribed to Kafka topics and it consumes messages as it arrives in broker
 *Once data found those messages are red and processed/formatted based on requirement and indexed to specified index name
 
-#Requirements of application to run
+# Requirements of application to run
 
-##application.properties
+## application.properties
 
 *server.port=<applicationPortNumber>
 
