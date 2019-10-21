@@ -44,7 +44,7 @@ public class KafkaConsumer {
 	 * Reads new message from Kafka Broker
 	 */
 
-	@KafkaListener(topics = "#{'${kafka.topic}'.split(',')}", groupId = "SampleConsumer_mess")
+	@KafkaListener(topics = "#{'${kafka.topic}'.split(',')}", groupId = "Kafka_Consumer")
 	public void consume(ConsumerRecord<?, Map<String, String>> message) {
 
 		try {
