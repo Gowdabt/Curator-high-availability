@@ -38,5 +38,21 @@ This Spring boot application enables read messages(Notification/Alarms) continuo
 KafkaTopics: EMS_KAFKA_ALARMS_TOPIC,ACHistoricPM,AsePtpHistoricPM,ATNBandCtpHistoricPM,ATNDchCtpHistoricPM,ATNOCGPTPHistoricPM,ATNOtuClientCtpHistoricPM,ATNTribPtpHistoricPM,BandCtpHistoricPM,BandPtpHistoricPM,BaseScgPtpHistoricPM,BmmOcgPtpHistoricPM,AC_BWPHistoricPM,ETHINTF_BWPHistoricPM,NWINTF_BWPHistoricPM,PW_BWPHistoricPM,CarrierCtpHistoricPM,ChannelCtpHistoricPM,ChassisHistoricPM,CmmOcgPtpHistoricPM,CmmOchPtpHistoricPM,AC_CMHistoricPM,ETHINTF_CMHistoricPM,NWINTF_CMHistoricPM,PW_CMHistoricPM,CxOcgPtpHistoricPM,CxScgPtpHistoricPM,DcfPtpHistoricPM,DchCtpHistoricPM,DigitalWrapperCtpHistoricPM,DsePtpHistoricPM,DtpCtpHistoricPM,EdfaHistoricPM,EthIntfHistoricPM,ExpnPtpHistoricPM,ExpnScgPtpHistoricPM,FANHistoricPM,FbmScgPtpHistoricPM,FcClientCtpHistoricPM,FeedPTPHistoricPM,FlexCarrierCtpHistoricPM,FmmcScgPtpHistoricPM,FmmfScgPtpHistoricPM,FrmScgPtpHistoricPM,FsmScgPtpHistoricPM,GamOcgPtpHistoricPM,GfpTpHistoricPM,GigeClientCtpHistoricPM,GroupTpHistoricPM,IdlerChannelCtpHistoricPM,IdlerPtpHistoricPM,IGccHistoricPM,LmOcgPtpHistoricPM,LmOchPtpHistoricPM,MACHistoricPM,MEPHistoricPM,MSHistoricPM,MxpScgPtpHistoricPM,NativeHistoricPM,NoHeaderHistoricPM,NwIntfHistoricPM,OchCtpHistoricPM,ODU0HistoricPM,ODU1HistoricPM,ODU2HistoricPM,ODU3HistoricPM,ODU4HistoricPM,OduClientCtpHistoricPM,OduFlexHistoricPM,OduKiCtpHistoricPM,OduKtClientCtpHistoricPM,OduKtiCtpHistoricPM,OfxScgPtpHistoricPM,OPSMPtpHistoricPM,OsaPtpHistoricPM,OscCtpHistoricPM,OscPtpHistoricPM,OsctCtpHistoricPM,OtsPtpHistoricPM,OTU0HistoricPM,OTU1HistoricPM,OTU2HistoricPM,OTU3HistoricPM,OTU4HistoricPM,OtuClientCtpHistoricPM,OtuKiCtpHistoricPM,PCSHistoricPM,PEMHistoricPM,PortHistoricPM,PWHistoricPM,RSHistoricPM,SchCtpHistoricPM,SdhClientCtpHistoricPM,SecureChannelHistoricPM,SecureEntityHistoricPM,SonetClientCtpHistoricPM,TribPtpHistoricPM,XtOcgPtpHistoricPM,XtScgPtpHistoricPM
 
 ```
+
+### build Docker image
+```
+docker build -f <DockerFileName> -t <DockerImageName> .
+
+example : docker build -f KafkaDockerFile -t kafka-toelasticsearch .
+
+```
+
+### Run Docker image
+```
+docker run -e "ENV1=value1" -e "ENV2=value2" kafka-to-elasticsearch
+
+example: docker run -e "applicationPortNumber=<applicationPortNumber>" -e "kafkaHost=10.220.224.66" -e "kafkaPort=9092" -e "clusterName=elasticsearch" -e "elasticsearchHostandPort=10.220.224.67:9300" -e "KafkaTopics=EMS_KAFKA_ALARMS_TOPIC,ACHistoricPM,AsePtpHistoricPM" kafka-to-elasticsearch
+```
+
 ### Note : This application currently supports only for alaram generator and performance generator
 
