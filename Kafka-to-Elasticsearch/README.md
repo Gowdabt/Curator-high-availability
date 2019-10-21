@@ -2,25 +2,25 @@
 
 This Spring boot application enables read messages(Notification/Alarms) continuously from Kafka broker  and format those data according to our requirement and helps to index data to elasticsearch
 
-*Notification/Performance data generator scripts will generate data for particular interval of time and those data's are pushed to Kafka broker for particular topic 
-*As Kafka to Elasticsearch application subscribed to Kafka topics and it consumes messages as it arrives in broker
-*Once data found those messages are red and processed/formatted based on requirement and indexed to specified index name
+* Notification/Performance data generator scripts will generate data for particular interval of time and those data's are pushed to Kafka broker for particular topic 
+* As Kafka to Elasticsearch application subscribed to Kafka topics and it consumes messages as it arrives in broker
+* Once data found those messages are red and processed/formatted based on requirement and indexed to specified index name
 
 # Requirements of application to run
 
 ## application.properties
 
-*server.port=<applicationPortNumber>
+* server.port=<applicationPortNumber>
 
-*kafka.host=<kafkaHost>
+* kafka.host=<kafkaHost>
 
-*kafka.port=<kafkaPort>
+* kafka.port=<kafkaPort>
 
-*spring.data.elasticsearch.cluster-name=<clusterName>
+* spring.data.elasticsearch.cluster-name=<clusterName>
 
-*spring.data.elasticsearch.cluster-nodes=<elasticsearchHostandPort>
+* spring.data.elasticsearch.cluster-nodes=<elasticsearchHostandPort>
 
-*kafka.topic=<KafkaTopics>
+* kafka.topic=<KafkaTopics>
 
 ```
 	Mandatory Arguments : 
@@ -52,7 +52,7 @@ example : docker build -f KafkaDockerFile -t kafka-toelasticsearch .
 ```
 docker run -e "ENV1=value1" -e "ENV2=value2" kafka-to-elasticsearch
 
-example: docker run -e "applicationPortNumber=<applicationPortNumber>" -e "kafkaHost=10.220.224.66" -e "kafkaPort=9092" -e "clusterName=elasticsearch" -e "elasticsearchHostandPort=10.220.224.67:9300" -e "KafkaTopics=EMS_KAFKA_ALARMS_TOPIC,ACHistoricPM,AsePtpHistoricPM" kafka-to-elasticsearch
+example: docker run -e "applicationPortNumber=8080" -e "kafkaHost=127.0.0.1" -e "kafkaPort=9092" -e "clusterName=elasticsearch" -e "elasticsearchHostandPort=127.0.0.1:9300" -e "KafkaTopics=EMS_KAFKA_ALARMS_TOPIC,ACHistoricPM,AsePtpHistoricPM" kafka-to-elasticsearch
 ```
 
 ### Note : This application currently supports only for alaram generator and performance generator
