@@ -52,6 +52,8 @@ public class KafkaConsumer {
 			String messageData = String.valueOf(message.value());
 			ObjectMapper mapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
 					false);
+					
+			//condition are placed to differintate data and transfer to specific repository
 			if (topicName.contains("EMS_KAFKA_ALARMS_TOPIC")) {
 				NotificationResource nr = getModifiedNotificationData(mapper.readValue(messageData, Resource.class));
 				resRepo.save(nr);

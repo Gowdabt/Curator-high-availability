@@ -90,7 +90,7 @@ public class NotificationResource {
 
 	@Override
 	public String toString() {
-		return "ModifiedResource [description=" + description + ", id=" + id + ", type=" + type + ", category="
+		return "NotificationResource [description=" + description + ", id=" + id + ", type=" + type + ", category="
 				+ category + ", version=" + version + ", characteristic=" + characteristic + ", baseType=" + baseType
 				+ "]";
 	}
