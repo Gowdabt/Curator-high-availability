@@ -30,6 +30,10 @@ public class NotificationResource {
 
 	private String baseType;
 
+	private String isValidated = "false";
+
+	private String testResult = "";
+
 	private Map<String, String> characteristic;
 
 	public String getDescription() {
@@ -88,11 +92,27 @@ public class NotificationResource {
 		this.baseType = baseType;
 	}
 
+	public String getIsValidated() {
+		return isValidated;
+	}
+
+	public void setIsValidated(String isValidated) {
+		this.isValidated = isValidated;
+	}
+
+	public String getTestResult() {
+		return testResult;
+	}
+
+	public void setTestResult(String testResult) {
+		this.testResult = testResult;
+	}
+
 	@Override
 	public String toString() {
-		return "NotificationResource [description=" + description + ", id=" + id + ", type=" + type + ", category="
-				+ category + ", version=" + version + ", characteristic=" + characteristic + ", baseType=" + baseType
-				+ "]";
+		return "NotificationResource [id=" + id + ", description=" + description + ", type=" + type + ", category="
+				+ category + ", version=" + version + ", baseType=" + baseType + ", isValidated=" + isValidated
+				+ ", testResult=" + testResult + ", characteristic=" + characteristic + "]";
 	}
 
 }
