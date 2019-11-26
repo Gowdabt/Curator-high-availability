@@ -9,12 +9,18 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.stereotype.Component;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 /**
  * @author Harshith Gowda B T
  *
  */
 @Component
 @Document(indexName = "dna-nbi-alarm-notify", type = "_doc")
+@Data
 public class NotificationResource {
 
 	@Id
@@ -36,83 +42,5 @@ public class NotificationResource {
 
 	private Map<String, String> characteristic;
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getVersion() {
-		return version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	public Map<String, String> getCharacteristic() {
-		return characteristic;
-	}
-
-	public void setCharacteristic(Map<String, String> characteristic) {
-		this.characteristic = characteristic;
-	}
-
-	public String getBaseType() {
-		return baseType;
-	}
-
-	public void setBaseType(String baseType) {
-		this.baseType = baseType;
-	}
-
-	public String getIsValidated() {
-		return isValidated;
-	}
-
-	public void setIsValidated(String isValidated) {
-		this.isValidated = isValidated;
-	}
-
-	public String getTestResult() {
-		return testResult;
-	}
-
-	public void setTestResult(String testResult) {
-		this.testResult = testResult;
-	}
-
-	@Override
-	public String toString() {
-		return "NotificationResource [id=" + id + ", description=" + description + ", type=" + type + ", category="
-				+ category + ", version=" + version + ", baseType=" + baseType + ", isValidated=" + isValidated
-				+ ", testResult=" + testResult + ", characteristic=" + characteristic + "]";
-	}
 
 }
