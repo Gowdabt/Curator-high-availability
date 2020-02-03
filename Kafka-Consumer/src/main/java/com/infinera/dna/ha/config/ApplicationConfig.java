@@ -27,12 +27,11 @@ public class ApplicationConfig {
 
 	@Value("${kafka.port}")
 	private String kafkaPort;
-	
-	
+
 	@Bean
 	public ConsumerFactory<Integer, String> consumerFactory() {
 		Map<String, Object> config = new HashMap<>();
-		
+
 		config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaHost + ":" + kafkaPort);
 		config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
 				"org.apache.kafka.common.serialization.StringDeserializer");
