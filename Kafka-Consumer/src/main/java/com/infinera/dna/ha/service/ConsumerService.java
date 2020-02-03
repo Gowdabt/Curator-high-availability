@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import com.infinera.dna.ha.MessageRepository;
+import com.infinera.dna.ha.dao.MessageRepository;
 import com.infinera.dna.ha.model.MessageDetails;
 
 /**
