@@ -13,7 +13,7 @@ import lombok.Data;
  * @author Harshith Gowda B T
  *
  */
-@Document(indexName = "dna-ha-avro-messages-details", type = "_doc")
+@Document(indexName = "dna.nbi.test.kafka.count", type = "_doc")
 @Data
 @AllArgsConstructor
 public class MessageDetails {

@@ -35,11 +35,12 @@ public class ConsumerService {
 
 		String topicName = message.topic();
 		String messageData = String.valueOf(message.value());
+		int start=message.key().toString().indexOf("M");
+		String messagekey=message.key().toString().substring(start,start+12);
 		messageCount++;
-		logger.info("Topic Name =" + message.topic() + " Message count =" + messageCount + "   message offset ="
-				+ message.offset() + "  message timeStamp =" + message.timestamp());
-		msd = new MessageDetails(message.topic() + message.timestamp(), message.topic(), message.offset(),
-				message.timestamp());
+		logger.info("Topic Name =" + message.topic() +" message key= "+message.topic()+"_"+messagekey+"_" + message.offset()+"                "+message.key());
+		
+		msd = new MessageDetails(message.topic()+"_"+messagekey+"_" + message.offset(), message.topic(), message.offset(),message.timestamp());
 		mr.save(msd);
 		msd = null;
 	}
