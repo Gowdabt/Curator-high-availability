@@ -20,6 +20,7 @@ public class MessageDetails {
 	@Id
 	private String id;
 	private String topicName;
+	private String motype;
 	private long messageOffset;
 	private long messageTimeStamp;
 
