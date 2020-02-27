@@ -54,15 +54,13 @@ public class KafkaConsumer {
 					false);
 					
 			//condition are placed to differintate data and transfer to specific repository
-			if (topicName.contains("EMS_KAFKA_ALARMS_TOPIC")) {
-				NotificationResource nr = getModifiedNotificationData(mapper.readValue(messageData, Resource.class));
-				resRepo.save(nr);
-			} else if (topicName.endsWith("PM")) {
+			if (topicName.endsWith("PM")) {
 				PerformanceResource pr = getModifiedPerformanceData(
 						mapper.readValue(messageData, PerformanceManagement.class), topicName);
 				perfMgmtRepo.save(pr);
 			} else {
-
+				NotificationResource nr = getModifiedNotificationData(mapper.readValue(messageData, Resource.class));
+				resRepo.save(nr);
 			}
 
 		} catch (IOException e) {
